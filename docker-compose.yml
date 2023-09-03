@@ -30,8 +30,8 @@ services:
     ports:
       - 9000:80
     restart: unless-stopped
-    environment:
-      - API_URI=http://api:8000/graphql/
+    env_file:
+      - dashboard.env
 
   db:
     image: library/postgres:13-alpine
